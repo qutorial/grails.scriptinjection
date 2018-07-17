@@ -9,12 +9,12 @@ class UserController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
     
-    static scaffold = User
+//    static scaffold = User
 
-//    def index(Integer max) {
-//        params.max = Math.min(max ?: 10, 100)
-//        respond userService.list(params), model:[userCount: userService.count()]
-//    }
+    def index(Integer max) {
+        params.max = Math.min(max ?: 10, 100)
+        respond userService.list(params), model:[userCount: userService.count()]
+    }
 
     def show(Long id) {
         respond userService.get(id)
